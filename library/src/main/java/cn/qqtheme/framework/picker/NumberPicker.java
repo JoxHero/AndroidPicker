@@ -51,5 +51,11 @@ public class NumberPicker extends OptionPicker {
         setSelectedItem(String.valueOf(number));
     }
 
+
+    public void addLastString(String string){
+        if(options != null){
+            options.add(string);
+        }
+    }
 }
 

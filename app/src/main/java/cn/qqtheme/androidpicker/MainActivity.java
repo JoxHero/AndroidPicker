@@ -16,13 +16,11 @@ import cn.qqtheme.framework.picker.ChineseZodiacPicker;
 import cn.qqtheme.framework.picker.ColorPicker;
 import cn.qqtheme.framework.picker.ConstellationPicker;
 import cn.qqtheme.framework.picker.DatePicker;
-import cn.qqtheme.framework.picker.FilePicker;
 import cn.qqtheme.framework.picker.NumberPicker;
 import cn.qqtheme.framework.picker.OptionPicker;
 import cn.qqtheme.framework.picker.SexPicker;
 import cn.qqtheme.framework.picker.TimePicker;
 import cn.qqtheme.framework.util.ConvertUtils;
-import cn.qqtheme.framework.util.StorageUtils;
 
 public class MainActivity extends Activity {
 
@@ -73,7 +71,7 @@ public class MainActivity extends Activity {
     }
 
     public void onYearMonthPicker(View view) {
-        DatePicker picker = new DatePicker(this, DatePicker.Mode.YEAR_MONTH);
+        /*DatePicker picker = new DatePicker(this, DatePicker.Mode.YEAR_MONTH);
         picker.setRange(1990, 2015);
         picker.setOnDatePickListener(new DatePicker.OnYearMonthPickListener() {
             @Override
@@ -81,18 +79,18 @@ public class MainActivity extends Activity {
                 showToast(year + "-" + month);
             }
         });
-        picker.show();
+        picker.show();*/
     }
 
     public void onMonthDayPicker(View view) {
-        DatePicker picker = new DatePicker(this, DatePicker.Mode.MONTH_DAY);
+        /*DatePicker picker = new DatePicker(this, DatePicker.Mode.MONTH_DAY);
         picker.setOnDatePickListener(new DatePicker.OnMonthDayPickListener() {
             @Override
             public void onDatePicked(String month, String day) {
                 showToast(month + "-" + day);
             }
         });
-        picker.show();
+        picker.show();*/
     }
 
     public void onTimePicker(View view) {
@@ -161,6 +159,7 @@ public class MainActivity extends Activity {
         picker.setRange(145, 200);//数字范围
         picker.setSelectedItem(172);
         picker.setLabel("厘米");
+        picker.addLastString("不显示");
         picker.setOnOptionPickListener(new OptionPicker.OnOptionPickListener() {
             @Override
             public void onOptionPicked(String option) {
@@ -219,7 +218,7 @@ public class MainActivity extends Activity {
     }
 
     public void onFilePicker(View view) {
-        FilePicker picker = new FilePicker(this);
+        /*FilePicker picker = new FilePicker(this);
         picker.setShowHideDir(false);
         picker.setRootPath(StorageUtils.getRootPath(this) + "Download/");
         //picker.setAllowExtensions(new String[]{".apk"});
@@ -230,11 +229,11 @@ public class MainActivity extends Activity {
                 showToast(currentPath);
             }
         });
-        picker.show();
+        picker.show();*/
     }
 
     public void onDirPicker(View view) {
-        FilePicker picker = new FilePicker(this);
+        /*FilePicker picker = new FilePicker(this);
         picker.setMode(FilePicker.Mode.Directory);
         picker.setOnFilePickListener(new FilePicker.OnFilePickListener() {
             @Override
@@ -242,7 +241,7 @@ public class MainActivity extends Activity {
                 showToast(currentPath);
             }
         });
-        picker.show();
+        picker.show();*/
     }
 
     public void onContact(View view) {

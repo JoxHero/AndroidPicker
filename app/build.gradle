@@ -19,6 +19,6 @@ android {
 
 dependencies {
     compile 'com.alibaba:fastjson:1.1.46.android'
-    //compile project(':library')
-    compile 'cn.qqtheme.framework:AndroidPicker:latest.integration'
+    compile project(':library')
+    //compile 'cn.qqtheme.framework:AndroidPicker:latest.integration'
 }
