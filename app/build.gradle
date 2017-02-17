@@ -1,22 +1,29 @@
 apply plugin: 'com.android.application'
 
 android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+    compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+    buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
+
+    defaultConfig {
+        multiDexEnabled true
+        minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
+        targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
+
+        applicationId globalConfiguration.getAt("androidApplicationId")
+        versionCode globalConfiguration.getAt("androidVersionCode")
+        versionName globalConfiguration.getAt("androidVersionName")
+        testInstrumentationRunner globalConfiguration.getAt("testInstrumentationRunner")
+        testApplicationId globalConfiguration.getAt("testApplicationId")
+    }
 
     buildTypes {
         release {
-            //是否zip优化
-            zipAlignEnabled true
-            //是否移除无用的资源
-            shrinkResources true
-            //是否混淆
-            minifyEnabled true
-            //混淆配置文件
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
-
 dependencies {
     compile 'com.alibaba:fastjson:1.1.46.android'
     compile project(':library')
